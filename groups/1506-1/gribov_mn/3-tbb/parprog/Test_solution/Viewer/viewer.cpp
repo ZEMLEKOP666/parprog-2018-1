@@ -31,10 +31,10 @@ int main(int argc, char * argv[])
 	textfile.open(filename + ".txt");
 	//textfile.open(filename.substr(0, filename.find('.')) + "_out.txt");
 
-	
+	//binfile.read((char*)(&time), sizeof(double)); // считывание времени
 	binfile.read((char*)(&N), sizeof(int));
 	textfile << N << "\n";
-	
+	//textfile << time << " " << N;
 
 	for (size_t i = 0; i < 2*N; ++i)
 	{
@@ -50,8 +50,7 @@ int main(int argc, char * argv[])
 		}
 
 	}
-	binfile.read((char*)(&time), sizeof(double)); // считывание времени
-	textfile << "Time: "<< time<<" seconds";
+	
 
 	textfile.close();
 	binfile.close();
